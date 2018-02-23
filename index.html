@@ -1,0 +1,24 @@
+<style>
+  html {
+    font-size: 1px;
+  }
+</style>
+<div id="app">
+  <input type="range" min="0" max="10000" v-model="size">
+  <img src="landolt.svg" :style="style">
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js" integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA=" crossorigin="anonymous"></script>
+<script>
+  new Vue({
+    data: { rotation: 0, size: 10 },
+    computed: {
+      style() {
+        return {
+          transform: `rotate(${this.rotation}deg)`,
+          width: `${this.size}rem`,
+        };
+      },
+    },
+    el: '#app',
+  });
+</script>
