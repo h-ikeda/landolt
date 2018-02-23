@@ -1,6 +1,6 @@
 <div id="app">
   <input type="range" v-model="size">
-  <img src="landolt.svg" :style="style">
+  <img src="landolt.svg" :style="style" :width="size">
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js" integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA=" crossorigin="anonymous"></script>
 <script>
@@ -10,10 +10,7 @@
     data: { rotation: 0, size: xdpi / 2.54 },
     computed: {
       style() {
-        return {
-          transform: `rotate(${this.rotation}deg)`,
-          width: `${this.size}px`,
-        };
+        return { transform: `rotate(${this.rotation}deg)` };
       },
     },
     el: '#app',
