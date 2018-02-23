@@ -6,6 +6,8 @@
 <script>
   const xdpi = screen.logicalXDPI;
   const ydpi = screen.logicalYDPI;
+  console.log(xdpi);
+  console.log(screen);
   new Vue({
     data: { rotation: 0, size: xdpi / 2.54 },
     computed: {
